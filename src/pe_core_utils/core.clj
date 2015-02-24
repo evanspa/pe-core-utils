@@ -58,7 +58,7 @@
       m)))
 
 (defn trim-keys
-  [keys m]
+  [m keys]
   (reduce (fn [new-map key] (dissoc new-map key))
           m
           keys))
