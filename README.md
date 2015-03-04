@@ -1,5 +1,7 @@
 # pe-core-utils
 
+[![Build Status](https://travis-ci.org/evanspa/pe-core-utils.svg)](https://travis-ci.org/evanspa/pe-core-utils)
+
 A Clojure library providing a set of helper functions.
 
 ## Documentation
