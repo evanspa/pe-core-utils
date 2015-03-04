@@ -12,8 +12,9 @@
                  [org.clojure/tools.nrepl "0.2.7"]]
   :resource-paths ["resources"]
   :profiles {:dev {:source-paths ["dev"]  ;ensures 'user.clj' gets auto-loaded
-                   :plugins [[cider/cider-nrepl "0.8.2"]]
+                   :plugins [[cider/cider-nrepl "0.9.0-SNAPSHOT"]]
                    :dependencies [[org.clojure/tools.namespace "0.2.7"]
-                                  [org.clojure/java.classpath "0.2.2"]]}}
+                                  [org.clojure/java.classpath "0.2.2"]
+                                  [org.clojure/tools.nrepl "0.2.7"]]}}
   :repositories [["releases" {:url "https://clojars.org/repo"
                               :creds :gpg}]])
