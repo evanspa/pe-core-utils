@@ -13,6 +13,8 @@ A Clojure library providing a set of helper functions.
 pe-core-utils is available from Clojars.  Add the following dependency to your
 `project.clj` file:
 
+[![Clojars Project](http://clojars.org/pe-core-utils/latest-version.svg)](http://clojars.org/pe-core-utils)
+
 ```
 [pe-core-utils "0.0.1"]
 ```
