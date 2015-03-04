@@ -11,6 +11,9 @@
                  [org.slf4j/slf4j-api "1.7.5"]
                  [org.clojure/tools.nrepl "0.2.7"]]
   :resource-paths ["resources"]
+  :codox {:exclude [user]
+          :src-dir-uri "https://github.com/evanspa/pe-core-utils/blob/master/"
+          :src-linenum-anchor-prefix "L"}
   :profiles {:dev {:source-paths ["dev"]  ;ensures 'user.clj' gets auto-loaded
                    :plugins [[cider/cider-nrepl "0.9.0-SNAPSHOT"]]
                    :dependencies [[org.clojure/tools.namespace "0.2.7"]
