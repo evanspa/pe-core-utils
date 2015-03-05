@@ -99,4 +99,4 @@
 (defn ->jsonkeys
   "Replaces all the keyword-based keys in m with JSON string keys."
   [m]
-  (replace-keys (keys m) m keyword->jsonkey))
+  (replace-keys m (keys m) keyword->jsonkey))
