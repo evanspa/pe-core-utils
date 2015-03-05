@@ -82,7 +82,7 @@
 
 (defn replace-keys
   "Returns m with each key transformed by key-transformer-fn."
-  [keys m key-transformer-fn]
+  [m keys key-transformer-fn]
   (reduce (fn [new-map key]
             (if-let [v (get m key)]
               (assoc new-map (key-transformer-fn key) v)

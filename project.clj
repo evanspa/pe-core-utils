@@ -8,8 +8,7 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [org.clojure/tools.logging "0.3.1"]
                  [ch.qos.logback/logback-classic "1.0.13"]
-                 [org.slf4j/slf4j-api "1.7.5"]
-                 [org.clojure/tools.nrepl "0.2.7"]]
+                 [org.slf4j/slf4j-api "1.7.5"]]
   :resource-paths ["resources"]
   :codox {:exclude [user]
           :src-dir-uri "https://github.com/evanspa/pe-core-utils/blob/0.0.2/"
