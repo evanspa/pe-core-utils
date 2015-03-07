@@ -64,6 +64,12 @@
         pw (java.io.PrintWriter. sw)]
     (.toString sw)))
 
+(defn remove-nils
+  "Removes nil entries from m."
+  [m]
+  (into {}
+        (filter (comp not nil? val) m)))
+
 (defn transform-map-val
   "Replaces the value at key in m with the result of applying transform-fn to
   the value at key."
