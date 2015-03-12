@@ -1,4 +1,4 @@
-(defproject pe-core-utils "0.0.6-SNAPSHOT"
+(defproject pe-core-utils "0.0.6"
   :description "A Clojure library providing a set of helper functions."
   :url "https://github.com/evanspa/pe-core-utils"
   :license {:name "MIT"
