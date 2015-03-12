@@ -8,6 +8,7 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [org.clojure/tools.logging "0.3.1"]
                  [ch.qos.logback/logback-classic "1.0.13"]
+                 [clj-time "0.8.0"]
                  [org.slf4j/slf4j-api "1.7.5"]]
   :resource-paths ["resources"]
   :codox {:exclude [user]

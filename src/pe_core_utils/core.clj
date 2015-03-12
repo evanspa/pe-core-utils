@@ -1,6 +1,7 @@
 (ns pe-core-utils.core
   "A set of functions, not particular to any one domain."
-  (:require [clojure.walk :refer [postwalk]]))
+  (:require [clojure.walk :refer [postwalk]]
+            [clj-time.core :as t]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Date/Time Helpers
@@ -42,6 +43,16 @@
                 (instant->rfc7231str key-or-val)
                 key-or-val))
             m))
+
+(defn d->instant
+  "Converts the date (java.util.Date) to an instant."
+  [d]
+  (.toDate d))
+
+(defn now->instant
+  "Returns now as an instant."
+  []
+  (d->instant (t/now)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Validation Helpers
