@@ -110,7 +110,7 @@
 (defn keyword->jsonkey
   "Returns keyword as a JSON string (basically just removes the beginning
   colon."
-  [^String keyword]
+  [keyword]
   (.substring (.toString keyword) 1))
 
 (defn ->jsonkeys
