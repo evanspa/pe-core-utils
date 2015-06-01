@@ -114,6 +114,14 @@
       (dissoc contains-key))
      m)))
 
+(defn assoc-if-contains
+  ([new-m m contains-key new-key]
+   (assoc-if-contains new-m m contains-key new-key identity))
+  ([new-m m contains-key new-key transform-fn]
+   (if (contains? m contains-key)
+     (assoc new-m new-key (transform-fn (get m contains-key)))
+     new-m)))
+
 (defn replace-keys
   "Returns m with each key transformed by key-transformer-fn."
   [m keys key-transformer-fn]
