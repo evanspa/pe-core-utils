@@ -68,6 +68,33 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Other Helpers
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn remove-matches
+  "Produces a new collection from coll where f applied to all pairs of elements
+  of coll that evaluate to true are not included in the new collection."
+  [coll f]
+  (let [num-items (count coll)]
+    (if (or (= 1 num-items)
+            (= 0 num-items))
+      coll
+      (loop [i 1
+             result-coll [(first coll)]]
+        (if (= i num-items)
+          result-coll
+          (recur (inc i)
+                 (let [num-result-items (count result-coll)
+                       result-item (let [outer-item (nth coll i)]
+                                     (loop [j 0
+                                            item nil]
+                                       (if (>= j num-result-items)
+                                         item
+                                         (let [inner-item (nth result-coll j)]
+                                           (if (f inner-item outer-item)
+                                             (recur i nil)
+                                             (recur (inc j) outer-item))))))]
+                   (if (not (nil? result-item))
+                     (conj result-coll result-item)
+                     result-coll))))))))
+
 (defn throwable->str
   "Returns throwable as a string."
   [throwable]
