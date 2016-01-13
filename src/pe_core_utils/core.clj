@@ -95,6 +95,13 @@
                      (conj result-coll result-item)
                      result-coll))))))))
 
+(defn deep-merge
+  "Recursively merges maps. If vals are not maps, the last value wins."
+  [& vals]
+  (if (every? map? vals)
+    (apply merge-with deep-merge vals)
+    (last vals)))
+
 (defn throwable->str
   "Returns throwable as a string."
   [throwable]
@@ -123,6 +130,24 @@
   (reduce (fn [new-map key] (dissoc new-map key))
           m
           keys))
+
+(defn replace-if-contains
+  ([m contains-key new-key]
+   (replace-if-contains m contains-key new-key identity))
+  ([m contains-key new-key transform-fn]
+   (if (contains? m contains-key)
+     (->
+      (assoc m new-key (transform-fn (get m contains-key)))
+      (dissoc contains-key))
+     m)))
+
+(defn assoc-if-contains
+  ([new-m m contains-key new-key]
+   (assoc-if-contains new-m m contains-key new-key identity))
+  ([new-m m contains-key new-key transform-fn]
+   (if (contains? m contains-key)
+     (assoc new-m new-key (transform-fn (get m contains-key)))
+     new-m)))
 
 (defn replace-keys
   "Returns m with each key transformed by key-transformer-fn."
