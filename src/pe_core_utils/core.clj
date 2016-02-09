@@ -124,6 +124,20 @@
       (assoc m key (transform-fn val))
       m)))
 
+(defn transform-and-move-map-val
+  [m
+   source-key
+   target-key
+   transform-fn]
+  (if (contains? m source-key)
+    (let [val (get m source-key)]
+      (if (not (nil? val))
+        (-> m
+            (assoc target-key (transform-fn val))
+            (dissoc source-key))
+        m))
+    m))
+
 (defn trim-keys
   "Returns m with each key in keys removed."
   [m keys]

@@ -26,7 +26,7 @@ pe-core-utils is available from Clojars.  Add the following dependency to your
 `project.clj` file:
 
 ```
-[pe-core-utils "0.0.12"]
+[pe-core-utils "0.0.13"]
 ```
 
 ## pe-* Clojure Library Suite
