@@ -5,17 +5,17 @@
             :url "http://opensource.org/licenses/MIT"}
   :plugins [[lein-pprint "1.1.2"]
             [codox "0.8.10"]]
-  :dependencies [[org.clojure/clojure "1.6.0"]
+  :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/tools.logging "0.3.1"]
                  [ch.qos.logback/logback-classic "1.0.13"]
                  [clj-time "0.8.0"]
-                 [org.slf4j/slf4j-api "1.7.5"]]
+                 [org.slf4j/slf4j-api "1.7.21"]]
   :resource-paths ["resources"]
   :codox {:exclude [user]
-          :src-dir-uri "https://github.com/evanspa/pe-core-utils/blob/0.0.13/"
+          :src-dir-uri "https://github.com/evanspa/pe-core-utils/blob/0.0.14/"
           :src-linenum-anchor-prefix "L"}
   :profiles {:dev {:source-paths ["dev"]  ;ensures 'user.clj' gets auto-loaded
-                   :plugins [[cider/cider-nrepl "0.9.0-SNAPSHOT"]]
+                   :plugins [[cider/cider-nrepl "0.12.0"]]
                    :dependencies [[org.clojure/tools.namespace "0.2.7"]
                                   [org.clojure/java.classpath "0.2.2"]
                                   [org.clojure/tools.nrepl "0.2.7"]]}

@@ -177,7 +177,9 @@
   "Returns keyword as a JSON string (basically just removes the beginning
   colon."
   [keyword]
-  (.substring (.toString keyword) 1))
+  (if (keyword? keyword)
+    (.substring (.toString keyword) 1)
+    (str keyword)))
 
 (defn ->jsonkeys
   "Replaces all the keyword-based keys in m with JSON string keys."
