@@ -12,7 +12,7 @@
                  [org.slf4j/slf4j-api "1.7.21"]]
   :resource-paths ["resources"]
   :codox {:exclude [user]
-          :src-dir-uri "https://github.com/evanspa/pe-core-utils/blob/0.0.14/"
+          :src-dir-uri "https://github.com/evanspa/pe-core-utils/blob/0.0.15/"
           :src-linenum-anchor-prefix "L"}
   :profiles {:dev {:source-paths ["dev"]  ;ensures 'user.clj' gets auto-loaded
                    :plugins [[cider/cider-nrepl "0.12.0"]]

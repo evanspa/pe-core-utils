@@ -163,6 +163,15 @@
      (assoc new-m new-key (transform-fn (get m contains-key)))
      new-m)))
 
+(defn assoc-if-contains-and-not-nil
+  ([new-m m contains-key new-key]
+   (assoc-if-contains-and-not-nil new-m m contains-key new-key identity))
+  ([new-m m contains-key new-key transform-fn]
+   (if (and (contains? m contains-key)
+            (not (nil? (get m contains-key))))
+     (assoc new-m new-key (transform-fn (get m contains-key)))
+     new-m)))
+
 (defn replace-keys
   "Returns m with each key transformed by key-transformer-fn."
   [m keys key-transformer-fn]
